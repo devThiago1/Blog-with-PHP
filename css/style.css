@@ -3,3 +3,9 @@
     align-items: center;
     margin-right: 3%;
 }
+
+@media(max-width: 1150px){
+    #name{
+        display: none;
+    }
+}
