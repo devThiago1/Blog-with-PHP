@@ -1,3 +1,11 @@
+<?php 
+include "config/connection.php";
+
+$stmt = $connection->prepare("SELECT * FROM posts ORDER BY id DESC");
+$stmt->execute();
+
+$results = $stmt->fetchAll(PDO::FETCH_ASSOC);  
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,67 +62,22 @@
     </div>   
     <div class="container">
         <div class="row row-cols-1 row-cols-md-3 g-4">
+            <?php foreach ($results as $post): ?>
                 <div class="col gy-5">
                     <div class="card">
-                        <img src="images/card1.png" class="card-img-top" alt="...">
+                        <img src="<?=$post['image']?>" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">DESTAQUE</h5>
-                            <p class="card-text">Chefe quebrou os servidores com um pouco de descuido de digitação, 
-                                deixando os técnicos para resolver o problema no final do domingo</p>
+                            <h5 class="card-title"><?=$post['title']?></h5>
+                            <p class="card-text"><?=$post['description']?></p>
+                            <a href="viewBlog.php?id=<?=$post['id']?>">
+                                <i class="fas fa-eye check-icon">Ver</i>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col gy-5">
-                    <div class="card">
-                        <img src="images/card2.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Google e Microsoft adicionam mais energia renovável para datacenters</h5>
-                            <p class="card-text">Ambos anunciam acordos de compra de energia verde para CDs do Reino Unido e da Irlanda, 
-                                enquanto as preocupações europeias com a energia continuam</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col gy-5">
-                    <div class="card">
-                        <img src="images/card3.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">A UE ainda está se preparando para o financiamento da European Chips Act</h5>
-                            <p class="card-text">Os líderes dão apoio unânime ao desbloqueio de € 43 bilhões - 
-                                mas a indústria diz que não é nada</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col gy-5">
-                    <div class="card">
-                        <img src="images/card5.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">MariaDB compra especialista geoespacial CubeWerx</h5>
-                            <p class="card-text">Longa lista de contribuições de padrões abertos faz parte da 
-                                jornada para a pilha GIS baseada em REST, dizem as empresas</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col gy-5">
-                    <div class="card">
-                        <img src="images/card6.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Oracle e IBM estão perdendo terreno para bancos de dados locais na China, diz IDC</h5>
-                            <p class="card-text">Um mercado em queda na marcha da China em direção à autossuficiência tecnológica, 
-                                um bazilhão a mais pela frente.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col gy-5">
-                    <div class="card">
-                        <img src="images/card7.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">As pessoas ainda parecem pensar que seus carros sofisticados são totalmente autônomos</h5>
-                            <p class="card-text">Isso ocorre apesar de um histórico de software de assistência envolvido em falhas.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
+    </div>
     <!-- FOOTER -->
     <?php include ('./components/footer.php'); ?>
 </body>

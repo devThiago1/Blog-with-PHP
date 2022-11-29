@@ -38,19 +38,28 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach ($results as $post): ?>
                     <tr>
-                        <td scope="row">id</td>
-                        <td scope="row">Título</td>
-                        <td scope="row">Descrição</td>
+                        <td scope="row"><?=$post["id"]?></td>
+                        <td scope="row"><?=$post["title"]?></td>
+                        <td scope="row"><?=$post["description"]?></td>
                         <td class="actions">
-                            <a href="">
-                                Ver
+                            <a href="viewBlog.php?id=<?$post['id']?>">
+                                <i class="fas fa-eye check-icon">
+                                    Ver
+                                </i>
                             </a>
-                            <a href="">
+                            <a href="editar.php?id=<?$post['id']?>">
+                                <i class="fas fa-eye check-icon">
+                                    Editar
+                                </i>
+                            </a>
+                            <a href="delete.php?id=<?$post['id']?>">
                                 X
                             </a>
                         </td>
                     </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
