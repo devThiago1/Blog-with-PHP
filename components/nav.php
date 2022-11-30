@@ -1,8 +1,15 @@
+    <?php 
+        include "config/connection.php";
 
+        $stmt = $connection->prepare("SELECT * FROM posts ORDER BY id DESC");
+        $stmt->execute();
+
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);  
+    ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <div class="container-logo" style="margin-right: 25%;">
-                <img src="images/logo.png" style="max-height: 100px; margin-right: 4%;">
+                <img src="images/logoblog.png" style="max-height: 100px; margin-right: 4%;">
                 <a class="nav-link  fs-3 text" id="name" aria-current="page" href="#" style="font-family: 'Share Tech Mono', monospace ;">Newsletter4devs</a>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

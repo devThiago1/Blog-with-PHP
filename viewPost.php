@@ -15,13 +15,14 @@
 </head>
 <body>
     <?php 
-        include 'config/connection.php';
-        include "nav.php";
+        include_once 'config/connection.php';
+        include "components/nav.php";
 
-        $id = $_GET["id"];
+        $id =$_GET['id'];
 
         $stmt = $connection->prepare("SELECT * FROM posts WHERE id = :id");
-        $stmt->execute();
+        $stmt->execute(array('id'=>$id));
+
 
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     ?>
@@ -37,6 +38,6 @@
         <?php endforeach ?>
     </div>
 
-    <?php include 'footer.php' ?>
+    <?php include 'components/footer.php' ?>
 </body>
 </html>

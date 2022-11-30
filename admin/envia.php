@@ -19,7 +19,6 @@ $stmt->bindParam(":DATA", $data);
 $stmt->bindParam(":IMAGE", $image);
 $stmt->execute();
 
-/*redireciona o arquivo */
 header("Location: view2.php");
 
 ?>
