@@ -1,7 +1,7 @@
 <footer class="mt-5 p-5 bg-light">
         <div class="container">
             <p class="float-end mb-4">
-                <a href="#"><img src="images/logoblog.png" style="max-height: 90px;"></a>
+                <a href="#"><img src="images/logo.png" style="max-height: 90px;"></a>
             </p>
             <p class="mb-1">Todos os Direitos Reservados...</p>
             <p class="mb-0">
