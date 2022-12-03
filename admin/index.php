@@ -18,12 +18,12 @@
             <img src="./imagesadmin/logoadmin.png" class="mb-4" width="70" height="70">
             <h3 class="h3">Admin Login</h3>
             <div class="col-sm-15">
-                <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" style="border-color: black;">
+                <label for="inputEmail4" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="inputEmail4" style="border-color: black;" name="login">
             </div>
             <div class="col-sm-15">
-                <label for="inputEmail4" class="form-label">Password</label>
-                <input type="password" class="form-control" id="inputPassword4" style="border-color: black;">
+                <label for="inputEmail4" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="inputPassword4" style="border-color: black;" name="senha">
             </div>
             <div class="col-sm-15" style="margin-top: 8%;">
                 <button class="btn btn-dark" type="submit">Login</button>
