@@ -35,8 +35,8 @@
                         </ul>
                     </li>
                 </ul>
-                <form class="d-flex mb-lg-6 " role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <form action="buscar.php" method="POST" class="d-flex mb-lg-6 " role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="buscar">
                     <button class="btn btn-outline-dark" type="submit">Search</button>
                 </form>
             </div>

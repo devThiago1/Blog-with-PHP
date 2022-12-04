@@ -76,7 +76,6 @@
 		    <?php endforeach; ?>
 	    </div>
     </div>
-
     <!-- FOOTER -->
     <?php include ('./components/footer.php'); ?>
 </body>
