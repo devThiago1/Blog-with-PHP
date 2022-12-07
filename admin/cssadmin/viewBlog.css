@@ -1,0 +1,23 @@
+.container-logo{
+    display: flex;
+    justify-content: center;
+}
+
+#title{
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+#data{
+    display: flex;
+    justify-content: flex-end;
+}
+#image{
+    display: flex;
+    justify-content: center;
+}
+#text{
+    display: flex;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}

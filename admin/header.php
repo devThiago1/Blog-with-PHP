@@ -26,7 +26,7 @@
                         <a href="" class="nav-item">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-item">Inserir</a>
+                        <a href="insert.php" class="nav-item">Realizar Postagem</a>
                     </li>
                </ul>
             </nav>

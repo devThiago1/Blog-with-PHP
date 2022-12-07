@@ -1,0 +1,13 @@
+.container-logo{
+    display: flex;
+    justify-content: center;
+}
+.voltar{
+    color: black; 
+    font-size:50px; 
+    display:flex; 
+    justify-content:center;
+    transform: rotate(180deg);
+    margin-right: 55%;
+    margin-top: 5%;
+}
