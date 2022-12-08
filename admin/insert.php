@@ -95,7 +95,7 @@
                     </div>
                 </div>
                 <div class="mb-3 mt-4">
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" aria-label="Default select example" name="category">
                         <option selected value="GERAL">Geral</option>
                         <option value="AI">AI</option>
                     </select>
