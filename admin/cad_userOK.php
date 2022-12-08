@@ -3,7 +3,7 @@
 
     $nome = $_POST['nome'];
     $login = $_POST['login'];
-    $senha = $_POST['senha'];
+    $senha = md5($_POST['senha']);
 
     $stmt = $connection->prepare('INSERT INTO users(nome, login, senha) VALUES(:nome, :login,:senha)');
 

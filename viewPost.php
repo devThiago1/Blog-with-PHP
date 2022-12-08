@@ -23,7 +23,9 @@
 
         $id =$_GET['id'];
 
-        $stmt = $connection->prepare("SELECT * FROM posts WHERE id = :id");
+        $stmt = $connection->prepare("SELECT category.name_cat, posts.title, posts.image, posts.text, posts.data FROM 
+        category INNER JOIN posts ON category.id_cat = posts.idcategory WHERE id = :id");
+        
         $stmt->execute(array('id'=>$id));
 
 
@@ -34,6 +36,7 @@
         <?php foreach($results as $post):?>
             <h1 id="title"><?=$post['title']?></h1>
             <p id="data"><?=date('d/m/Y', strtotime($post['data'])) ?></p>
+            <p id="data">Categoria: <?= $post["name_cat"] ?></p>
             <p id="image">
                 <img src="<?=$post['image']?>" alt="<?=$post['title']?>">
             </p>

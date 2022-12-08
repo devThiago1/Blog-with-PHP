@@ -1,15 +1,4 @@
-    <?php 
-        include "config/connection.php";
 
-        $stmt = $connection->prepare("SELECT * FROM posts ORDER BY id DESC");
-        $stmt->execute();
-        
-        $toslide = $connection->prepare("SELECT * FROM posts WHERE id <4"); 
-        $toslide->execute();
-
-        $resultsToSlide = $toslide->fetchAll(PDO::FETCH_ASSOC);
-        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);  
-    ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <div class="container-logo" style="margin-right: 38%;">
@@ -29,8 +18,8 @@
                         Categorias
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="category.php?cat=GERAL">Geral</a></li>
-                            <li><a class="dropdown-item" href="category.php?cat=AI">AI</a></li>
+                            <li><a class="dropdown-item" href="category.php?cat=1">Geral</a></li>
+                            <li><a class="dropdown-item" href="category.php?cat=2">AI</a></li>
                         </ul>
                     </li>
                 </ul>

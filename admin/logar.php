@@ -5,7 +5,7 @@
         session_start();
 
         $login = $_POST['login'];
-        $senha = $_POST['senha'];
+        $senha = md5($_POST['senha']);
 
         $stmt = $connection->prepare("SELECT  * FROM users WHERE login = :LOGIN AND senha = :SENHA");
 

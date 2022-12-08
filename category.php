@@ -19,7 +19,7 @@
     include_once('./config/connection.php');
 
     $cat=$_GET['cat'];
-    $stmt = $connection->prepare('SELECT title, image, description,data FROM posts WHERE category = :cat');
+    $stmt = $connection->prepare('SELECT title, image, description,data FROM posts WHERE idcategory = :cat');
     $stmt->execute(array('cat' => $cat));
 
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);

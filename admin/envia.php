@@ -1,6 +1,6 @@
 <?php
 include_once('../config/connection.php');
-$stmt = $connection->prepare("INSERT INTO posts (title, description, data, image, text, category) VALUES(:TITLE, :DESCRIPTION, :DATA, :IMAGE, :TEXT, :CATEGORY)");
+$stmt = $connection->prepare("INSERT INTO posts (title, description, data, image, text, idcategory) VALUES(:TITLE, :DESCRIPTION, :DATA, :IMAGE, :TEXT, :CATEGORY)");
 
 $title = $_POST['title'];
 $data = $_POST['data'];

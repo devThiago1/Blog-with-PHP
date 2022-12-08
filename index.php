@@ -1,3 +1,15 @@
+<?php 
+        include "config/connection.php";
+
+        $stmt = $connection->prepare("SELECT * FROM posts ORDER BY id DESC");
+        $stmt->execute();
+        
+        $toslide = $connection->prepare("SELECT * FROM posts WHERE id <4"); 
+        $toslide->execute();
+
+        $resultsToSlide = $toslide->fetchAll(PDO::FETCH_ASSOC);
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);  
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
