@@ -19,7 +19,7 @@
     include_once('./config/connection.php');
 
     $cat=$_GET['cat'];
-    $stmt = $connection->prepare('SELECT title, image, description,data FROM posts WHERE idcategory = :cat');
+    $stmt = $connection->prepare('SELECT title, image, description,data, id FROM posts WHERE idcategory = :cat');
     $stmt->execute(array('cat' => $cat));
 
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -42,7 +42,7 @@
                             <p>
                                 <?=date('d/m/Y', strtotime($post['data'])); ?>
                             </p>
-		                    <a href="viewPost.php?id=<?= $post["id"] ?>">
+		                    <a href="viewPost.php?id=<?=$post['id']?>">
                                 <i class="fas fa-eye check-icon">Mais</i>
                             </a>
 		                </div>

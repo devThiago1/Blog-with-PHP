@@ -25,8 +25,11 @@
                     <li class="nav-item">
                         <a href="" class="nav-item">Dashboard</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="insert.php" class="nav-item">Realizar Postagem</a>
+                    <li class="nav-item" style="margin-top: 3%;">
+                        <a href="insert.php" class="nav-item">Adicionar Postagem</a>
+                    </li>
+                    <li class="nav-item" style="margin-top: 3%;">
+                        <a href="addcategory.php" class="nav-item">Adicionar Categorias</a>
                     </li>
                </ul>
             </nav>

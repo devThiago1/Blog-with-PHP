@@ -1,6 +1,13 @@
 <?php
-        include_once("session.php");
+        include_once("../config/connection.php");
+    include_once("session.php");
+    
 
+    $stmt= $connection->prepare("SELECT * FROM category ORDER BY id_cat DESC");
+
+    $stmt->execute();
+
+    $results = $stmt->fetchALL(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -74,7 +81,7 @@
                     <label for="formGroupExampleInput" class="form-label">Título</label>
                     <input type="text" class="form-control" name="title" id="formGroupExampleInput" placeholder="Insira o título">
                 </div>
-                <div class="row g-3">
+                <div class="row g-3"  style="margin-top: 3%;">
                     <div class="col">
                         <label for="formGroupExampleInput2" class="form-label">Descrição</label>
                         <textarea id="myTextarea" name="description" class="form-control">Insira a descrição</textarea>
@@ -84,7 +91,7 @@
                         <textarea id="Text" name="text" class="form-control">Insira o texto</textarea>
                     </div>
                 </div>
-                <div class="row g-3">
+                <div class="row g-3" style="margin-top: 3%;">
                     <div class="col">
                         <label for="formGroupExampleInput2" class="form-label">Data</label>
                         <input type="date" class="form-control" name="data" id="formGroupExampleInput2" placeholder="Insira a data">
@@ -94,13 +101,14 @@
                         <input type="file" class="form-control" name="image" id="formGroupExampleInput3" placeholder="Insira uma imagem">
                     </div>
                 </div>
-                <div class="mb-3 mt-4">
+                <div class="mb-5 mt-4">
                     <select class="form-select" aria-label="Default select example" name="category">
-                        <option selected value="1">Geral</option>
-                        <option value="2">AI</option>
+                      <?php foreach ($results as $post): ?>
+                        <option selected value="<?=$post['id_cat']?>"><?=$post['name_cat']?></option>
+                      <?php endforeach; ?>
                     </select>
                 </div>
-                <div class="mt-3">
+                <div class="mt-3" style="margin-bottom: 7%;">
                     <button class="btn btn-primary" type="submit">Publicar</button>
                 </div>
             </form>

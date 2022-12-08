@@ -24,7 +24,7 @@
             
             header("Location: view2.php");
         }else{
-            echo 'Usuário não cadastrado';
+            header("Location: usernotfound.php");
         }
 
 

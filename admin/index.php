@@ -25,8 +25,12 @@
                 <label for="inputEmail4" class="form-label">Senha</label>
                 <input type="password" class="form-control" id="inputPassword4" style="border-color: black;" name="senha">
             </div>
-            <div class="col-sm-15" style="margin-top: 8%;">
+            <div class="col-sm-15" style="margin-top: 8%; margin-bottom: 5%;">
                 <button class="btn btn-dark" type="submit">Login</button>
+            </div>
+
+            <div class="col-sm-15">
+                <a href="cad_user.php">Não possui conta? Faça seu cadastro aqui!</a>
             </div>
         </form>
     </main> 

@@ -1,4 +1,8 @@
-
+<?php 
+      $tocategory= $connection->prepare("SELECT * FROM category ORDER BY id_cat DESC");
+      $tocategory->execute();
+      $resultsToCategory = $tocategory->fetchALL(PDO::FETCH_ASSOC);
+?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <div class="container-logo" style="margin-right: 38%;">
@@ -18,8 +22,11 @@
                         Categorias
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="category.php?cat=1">Geral</a></li>
-                            <li><a class="dropdown-item" href="category.php?cat=2">AI</a></li>
+                            <?php foreach($resultsToCategory as $category): ?>
+                                <li>
+                                    <a class="dropdown-item" href="category.php?cat=<?=$category['id_cat']?>"><?=$category['name_cat']?></a>
+                                </li>
+                            <?php endforeach; ?>
                         </ul>
                     </li>
                 </ul>
